@@ -5,6 +5,11 @@ var path = require('path');
 var express = require('express');
 var app = express();
 
+//Indicamos al servidor que cualquier fichero que le pidan
+//lo podrá encontrar en la carpeta clientFiles
+app.use(express.static('clientFiles'));
+
+
 // En caso de que la ruta web sea la raiz
 app.get('/', function(req, res) {
     // Devolvemos el fichero index de la carpeta de ficheros del cliente
